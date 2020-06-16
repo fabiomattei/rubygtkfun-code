@@ -11,7 +11,7 @@ Last modified: June 2020
 
 require 'gtk3'
 
-app = Gtk::Application.new("org.rubygtkfun.warmingup", :flags_none)
+app = Gtk::Application.new("org.rubygtkfun.label2", :flags_none)
 
 app.signal_connect "activate" do |application|
   window = Gtk::ApplicationWindow.new application
