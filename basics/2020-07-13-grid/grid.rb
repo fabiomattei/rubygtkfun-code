@@ -18,19 +18,21 @@ class Application < Gtk::Application
     signal_connect :activate do |application|
       window = Gtk::ApplicationWindow.new application
       window.set_default_size 300, 100
-      window.set_title 'Example of a box container'
+      window.set_title 'Example of a grid container'
 
-      box = Gtk::Box.new :horizontal # it could be :vertical too
-      window.add box
+      grid = Gtk::Grid.new
+      grid.set_property "row-homogeneous", true
+      grid.set_property "column-homogeneous", true
+      window.add grid
 
       @hello_button = Gtk::Button.new :label => "Hello"
-      box.add @hello_button
+      grid.attach @hello_button, 0, 0, 1, 1 # child, left, top, width, height
 
       @world_button = Gtk::Button.new :label => "World"
-      box.add @world_button
+      grid.attach @world_button, 1, 0, 1, 1 # child, left, top, width, height
 
       @label = Gtk::Label.new 'Still empty!'
-      box.add @label
+      grid.attach @label, 0, 1, 2, 1        # child, left, top, width, height
 
       @hello_button.signal_connect "clicked" do |sender, event| 
         on_btn_clicked sender, event
