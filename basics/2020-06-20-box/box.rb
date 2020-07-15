@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 
 '''
 This example demonstrates the Gtk::Box container.
