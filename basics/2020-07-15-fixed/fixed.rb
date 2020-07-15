@@ -15,8 +15,6 @@ class Application < Gtk::Application
   def initialize
     super 'org.rubygtkfun.fixed', Gio::ApplicationFlags::FLAGS_NONE
 	
-	override_background_color :normal, Gdk::RGBA::new(0.2, 0.2, 0.2, 1)
-
     signal_connect :activate do |application|
       window = Gtk::ApplicationWindow.new application
       window.set_default_size 300, 150
